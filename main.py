@@ -114,6 +114,14 @@ async def upload_image(file: UploadFile):
 
     return result  # Reactに返す！
 
+# 削除API
+@app.delete("/history")
+def clear_history():
+    with open("history.json", "w", encoding="utf-8") as f:
+        f.write("")  # 内容を空にする
+    return {"message": "履歴を削除しました"}
+
+
 
 
 
